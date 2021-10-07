@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h2 class="text-center mt-0">제목 : {{post.title}}</h2>
+    <hr class="divider" />
+    <div class="text-center mt-0">
+    <p>작성 일자: {{ post.pub_date }}</p>
+    <p>글쓴이 : {{ post.writer }}</p>
+    <p>내용 : {{ post.content }}</p>
+    <button class="button" type="submit"><a href="{% url 'edit' post.id %}">수정하기</a></button>
+    <button class="button" type="submit"><a href="{% url 'delete' post.id %}">삭제하기</a></button>
+    </div>
+    
+{% endblock %}
