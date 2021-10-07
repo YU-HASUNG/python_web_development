@@ -1,0 +1,19 @@
+{% extends 'crudApp/index.html' %}
+{% block content %}
+<section class="page-section bg-primary" id="about">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 text-center">
+                <!--CREATE FORM 들어갈 예정-->
+                <form method="POST"> <!--정보를 입력받을 수 있는 태그 form을 사용하고, POST방식로 데이터를 보낸다. POST 방식을 데이터를 처리(생성)하기 위한 요청-->
+                    {% csrf_token %}
+                    <table>
+                        {{form.as_table}}
+                    </table>
+                    <button class="btn btn-primary btn-xl" type="submit">작성</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
